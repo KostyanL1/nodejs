@@ -1,0 +1,10 @@
+{
+  "firstName":"Kostyantin",
+  "lastName":"Legenkiy",
+  "languages":[
+    {"title":"Python","level":"Beginner"},
+    {"title":"Ruby","level":"Beginner"},
+    {"title":"JavaScript","level":"Junior"},
+    {"title":"Java","level":"Intermadiate"}
+  ]
+}

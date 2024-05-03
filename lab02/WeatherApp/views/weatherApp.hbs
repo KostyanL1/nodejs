@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Погода</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            display: inline-block;
+            margin: 10px;
+        }
+
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #45a049;
+        }
+
+        h2 {
+            color: #333;
+            margin-top: 30px;
+        }
+
+        p {
+            color: #555;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+<h1>Виберіть місто:</h1>
+<ul>
+    <li><a href="/weather?city=Київ" id="city1">Київ</a></li>
+    <li><a href="/weather?city=Львів" id="city2">Львів</a></li>
+    <li><a href="/weather?city=Одеса" id="city3">Одеса</a></li>
+    <li><a href="/weather?city=Харків" id="city4">Харків</a></li>
+</ul>
+
+{{#if weatherData}}
+    <h2>Погода в місті {{weatherData.name}}:</h2>
+    <p>{{weatherData.weather.0.description}}. Температура: {{weatherData.main.temp}}°C, Вітер: {{weatherData.wind.speed}} м/с.</p>
+{{else if error}}
+    <p>{{error}}</p>
+{{/if}}
+</body>
+</html>
